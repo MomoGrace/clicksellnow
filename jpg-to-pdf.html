@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>JPG to PDF Converter - Convert Images to PDF Free | ClickSellNow</title>
+  <meta name="description" content="Convert JPG images to PDF online for free. Upload one or more images and turn them into a PDF file quickly. No signup required.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #111;
+      text-align: center;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 22px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background: #111;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .tool-box {
+      background: #fff;
+      padding: 35px 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .content-section {
+      background: #fff;
+      text-align: left;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+
+    .content-section h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .content-section ul {
+      padding-left: 22px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    ClickSellNow - Free PDF Tools
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pdf-to-word.html">PDF to Word</a>
+    <a href="merge-pdf.html">Merge PDF</a>
+    <a href="compress-pdf.html">Compress PDF</a>
+    <a href="split-pdf.html">Split PDF</a>
+    <a href="jpg-to-pdf.html">JPG to PDF</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="tool-box">
+      <h1>JPG to PDF Converter</h1>
+      <p class="subtitle">Convert JPG or PNG images into a PDF file online.</p>
+
+      <input type="file" id="imageFiles" accept="image/jpeg,image/png" multiple />
+      <br>
+      <button onclick="convertImagesToPDF()">Convert to PDF</button>
+
+      <p class="note" id="message">Select one or more images to begin.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Convert JPG to PDF Online for Free</h2>
+      <p>
+        Our JPG to PDF tool helps you turn images into a PDF document quickly.
+        You can upload one or more JPG or PNG images and combine them into one PDF file.
+      </p>
+      <p>
+        This is useful for school documents, receipts, forms, ID images, scanned pages, and photos that need to be shared as a PDF.
+      </p>
+    </div>
+
+    <div class="content-section">
+      <h2>Why Use JPG to PDF?</h2>
+      <ul>
+        <li>Convert photos into a PDF document.</li>
+        <li>Combine multiple images into one PDF file.</li>
+        <li>Make documents easier to upload or email.</li>
+        <li>Use directly in your browser with no signup required.</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2>How to Convert JPG to PDF</h2>
+      <ul>
+        <li>Choose one or more image files.</li>
+        <li>Click the Convert to PDF button.</li>
+        <li>Your images will be added into a PDF file.</li>
+        <li>Download your PDF document.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 ClickSellNow.com - Free Online Tools
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+
+  <script>
+    async function convertImagesToPDF() {
+      const fileInput = document.getElementById("imageFiles");
+      const message = document.getElementById("message");
+
+      if (!fileInput.files.length) {
+        message.textContent = "Please choose at least one image file.";
+        return;
+      }
+
+      message.textContent = "Converting your images. Please wait...";
+
+      try {
+        const pdfDoc = await PDFLib.PDFDocument.create();
+
+        for (const file of fileInput.files) {
+          const imageBytes = await file.arrayBuffer();
+          let image;
+
+          if (file.type === "image/jpeg") {
+            image = await pdfDoc.embedJpg(imageBytes);
+          } else if (file.type === "image/png") {
+            image = await pdfDoc.embedPng(imageBytes);
+          } else {
+            continue;
+          }
+
+          const width = image.width;
+          const height = image.height;
+
+          const page = pdfDoc.addPage([width, height]);
+          page.drawImage(image, {
+            x: 0,
+            y: 0,
+            width: width,
+            height: height
+          });
+        }
+
+        const pdfBytes = await pdfDoc.save();
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "images-to-pdf.pdf";
+        link.click();
+
+        message.textContent = "Done! Your PDF has been downloaded.";
+      } catch (error) {
+        message.textContent = "Something went wrong. Please try another image.";
+      }
+    }
+  </script>
+
+</body>
+</html>
