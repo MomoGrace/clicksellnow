@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Compress PDF Online - Reduce PDF File Size Free | ClickSellNow</title>
+  <meta name="description" content="Compress PDF files online for free. Reduce PDF file size quickly and easily. Simple, fast and no signup required.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #111;
+      text-align: center;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 22px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background: #111;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .tool-box {
+      background: #fff;
+      padding: 35px 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .content-section {
+      background: #fff;
+      text-align: left;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+
+    .content-section h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .content-section ul {
+      padding-left: 22px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    ClickSellNow - Free PDF Tools
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pdf-to-word.html">PDF to Word</a>
+    <a href="merge-pdf.html">Merge PDF</a>
+    <a href="compress-pdf.html">Compress PDF</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="tool-box">
+      <h1>Compress PDF Online</h1>
+      <p class="subtitle">Reduce PDF file size quickly and easily.</p>
+
+      <input type="file" id="pdfFile" accept="application/pdf" />
+      <br>
+      <button onclick="showMessage()">Upload PDF</button>
+
+      <p class="note" id="message">Select a PDF file to begin.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Compress PDF Files for Free</h2>
+      <p>
+        Our Compress PDF tool helps you reduce the size of PDF files so they are easier to upload,
+        email, store and share. Large PDF files can be difficult to send, especially when email or
+        form upload limits are low.
+      </p>
+      <p>
+        This tool is designed to make PDF compression simple. Choose your PDF file and prepare it
+        for file size reduction directly from your browser.
+      </p>
+    </div>
+
+    <div class="content-section">
+      <h2>Why Compress a PDF File?</h2>
+      <ul>
+        <li>Make large PDF files easier to send by email.</li>
+        <li>Reduce file size for online form uploads.</li>
+        <li>Save storage space on your device.</li>
+        <li>Share documents faster with smaller file sizes.</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2>How to Compress PDF Online</h2>
+      <ul>
+        <li>Choose a PDF file from your device.</li>
+        <li>Upload the PDF file using the button above.</li>
+        <li>Prepare the file for compression.</li>
+        <li>Download the smaller PDF when the full feature is available.</li>
+      </ul>
+      <p>
+        We are improving this tool step by step. More PDF functions will be added soon.
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 ClickSellNow.com - Free Online Tools
+  </footer>
+
+  <script>
+    function showMessage() {
+      const fileInput = document.getElementById("pdfFile");
+      const message = document.getElementById("message");
+
+      if (!fileInput.files.length) {
+        message.textContent = "Please choose a PDF file first.";
+        return;
+      }
+
+      message.textContent = "PDF selected: " + fileInput.files[0].name + ". Compress feature is being prepared.";
+    }
+  </script>
+
+</body>
+</html>
