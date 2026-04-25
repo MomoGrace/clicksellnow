@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Split PDF Online - Extract PDF Pages Free | ClickSellNow</title>
+  <meta name="description" content="Split PDF files online for free. Extract pages from a PDF document quickly and easily. No signup required.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #111;
+      text-align: center;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 22px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background: #111;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .tool-box {
+      background: #fff;
+      padding: 35px 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .content-section {
+      background: #fff;
+      text-align: left;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+
+    .content-section h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .content-section ul {
+      padding-left: 22px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    ClickSellNow - Free PDF Tools
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pdf-to-word.html">PDF to Word</a>
+    <a href="merge-pdf.html">Merge PDF</a>
+    <a href="compress-pdf.html">Compress PDF</a>
+    <a href="split-pdf.html">Split PDF</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="tool-box">
+      <h1>Split PDF Online</h1>
+      <p class="subtitle">Extract pages from your PDF file and download them separately.</p>
+
+      <input type="file" id="pdfFile" accept="application/pdf" />
+      <br>
+      <button onclick="splitPDF()">Split PDF</button>
+
+      <p class="note" id="message">Select a PDF file to begin.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Split PDF Files Online for Free</h2>
+      <p>
+        Our Split PDF tool helps you separate a PDF document into individual pages.
+        This is useful when you only need certain pages from a long document, report, worksheet, form or scanned file.
+      </p>
+      <p>
+        The tool works directly in your browser. Your file is processed on your device, making it simple and convenient to use.
+      </p>
+    </div>
+
+    <div class="content-section">
+      <h2>Why Split a PDF?</h2>
+      <ul>
+        <li>Extract specific pages from a large PDF file.</li>
+        <li>Separate scanned documents into individual pages.</li>
+        <li>Share only the pages you need.</li>
+        <li>Organize reports, forms, worksheets and documents more easily.</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2>How to Split PDF Online</h2>
+      <ul>
+        <li>Choose a PDF file from your device.</li>
+        <li>Click the Split PDF button.</li>
+        <li>The pages will be separated into individual PDF files.</li>
+        <li>Download the ZIP file containing the split pages.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 ClickSellNow.com - Free Online Tools
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip/dist/jszip.min.js"></script>
+
+  <script>
+    async function splitPDF() {
+      const fileInput = document.getElementById("pdfFile");
+      const message = document.getElementById("message");
+
+      if (!fileInput.files.length) {
+        message.textContent = "Please choose a PDF file first.";
+        return;
+      }
+
+      const file = fileInput.files[0];
+
+      if (file.type !== "application/pdf") {
+        message.textContent = "Please upload a valid PDF file.";
+        return;
+      }
+
+      message.textContent = "Processing your PDF. Please wait...";
+
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+        const totalPages = pdfDoc.getPageCount();
+
+        const zip = new JSZip();
+
+        for (let i = 0; i < totalPages; i++) {
+          const newPdf = await PDFLib.PDFDocument.create();
+          const [copiedPage] = await newPdf.copyPages(pdfDoc, [i]);
+          newPdf.addPage(copiedPage);
+
+          const pdfBytes = await newPdf.save();
+          zip.file("page-" + (i + 1) + ".pdf", pdfBytes);
+        }
+
+        const zipBlob = await zip.generateAsync({ type: "blob" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(zipBlob);
+        link.download = "split-pdf-pages.zip";
+        link.click();
+
+        message.textContent = "Done! Your split PDF pages have been downloaded.";
+      } catch (error) {
+        message.textContent = "Something went wrong. Please try another PDF file.";
+      }
+    }
+  </script>
+
+</body>
+</html>
