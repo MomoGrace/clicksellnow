@@ -1,156 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ClickSellNow - Free Online PDF Tools</title>
-<meta name="description" content="Free online PDF tools. Convert, merge and compress PDF files quickly and easily. No signup required.">
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f8f9fa;
-  text-align: center;
-}
-header {
-  background: #000;
-  color: #fff;
-  padding: 20px;
-  font-size: 22px;
-}
-.container {
-  padding: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-.tool {
-  background: #fff;
-  display: inline-block;
-  width: 30%;
-  max-width: 350px;
-  margin: 10px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  vertical-align: top;
-  box-sizing: border-box;
-}
-button {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background: #0056b3;
-}
-footer {
-  margin-top: 30px;
-  padding: 15px;
-  font-size: 12px;
-  color: #666;
-}
-@media (max-width: 768px) {
-  .tool {
-    display: block;
-    width: auto;
-    margin: 15px auto;
+  <title>ClickSellNow – Free Online PDF Tools</title>
+
+  <meta name="description" content="Free online PDF tools to convert, merge, split, rotate, and manage PDF files. Use ClickSellNow directly in your browser with no software installation." />
+
+  <meta name="keywords" content="free PDF tools, online PDF tools, JPG to PDF, PDF to JPG, merge PDF, split PDF, rotate PDF, PDF converter online" />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.clicksellnow.com/" />
+
+  <meta property="og:title" content="ClickSellNow – Free Online PDF Tools" />
+  <meta property="og:description" content="Use free online PDF tools to convert, merge, split, rotate, and manage PDF files directly in your browser." />
+  <meta property="og:url" content="https://www.clicksellnow.com/" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8fb;
+      color: #1f2937;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 24px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #374151;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      max-width: 980px;
+      margin: 56px auto 30px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      color: #111827;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto;
+      color: #4b5563;
+    }
+
+    .badges {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .badge {
+      padding: 9px 14px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      font-size: 14px;
+      color: #374151;
+      font-weight: 700;
+    }
+
+    .tools-grid {
+      max-width: 1050px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .tool-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .tool-card h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      color: #111827;
+    }
+
+    .tool-card p {
+      margin: 0;
+      color: #4b5563;
+      line-height: 1.6;
+      min-height: 52px;
+    }
+
+    .tool-card a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 18px;
+      background: #2563eb;
+      color: #ffffff;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .tool-card a:hover {
+      background: #1d4ed8;
+    }
+
+    .seo-content {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 34px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .seo-content h2 {
+      margin-top: 34px;
+      margin-bottom: 12px;
+      font-size: 28px;
+      color: #111827;
+    }
+
+    .seo-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-content h3 {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 21px;
+      color: #111827;
+    }
+
+    .seo-content p {
+      margin: 0 0 14px;
+      color: #374151;
+    }
+
+    .seo-content ul {
+      padding-left: 24px;
+      color: #374151;
+    }
+
+    .seo-content a {
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .related-tools {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .related-tools h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .tool-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .tool-links a {
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      color: #111827;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .tool-links a:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .seo-content {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 24px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ClickSellNow",
+    "url": "https://www.clicksellnow.com/",
+    "description": "Free online PDF tools to convert, merge, split, rotate, and manage PDF files."
   }
+  </script>
 
-  header {
-    font-size: 20px;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is ClickSellNow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ClickSellNow is a website that provides free online PDF tools for converting, merging, splitting, rotating, and managing PDF files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the PDF tools free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The PDF tools on ClickSellNow are free to use directly in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The tools work online in your browser, so you do not need to install software."
+        }
+      }
+    ]
   }
-}
- 
-</style>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </script>
+</head>
 
-<meta name="google-site-verification" content="1K90b3h8nfhtKe2Sm3nkr08VSze9F7RLCxQcqTV2w8E" />
-
-<title>ClickSellNow - Free PDF Tools</title>
-  </head>
 <body>
+  <header>
+    <div class="nav">
+      <a class="logo" href="/">ClickSellNow</a>
 
-<header>
-ClickSellNow - Free PDF Tools
-</header>
+      <nav class="nav-links">
+        <a href="/jpg-to-pdf.html">JPG to PDF</a>
+        <a href="/pdf-to-jpg.html">PDF to JPG</a>
+        <a href="/merge-pdf.html">Merge PDF</a>
+        <a href="/split-pdf.html">Split PDF</a>
+        <a href="/rotate-pdf.html">Rotate PDF</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
+  <main>
+    <section class="hero">
+      <h1>Free Online PDF Tools</h1>
+      <p>
+        Convert, merge, split, rotate, and manage PDF files online. ClickSellNow helps you handle everyday document tasks quickly and easily in your browser.
+      </p>
 
-<h2>Simple & Free Online Tools</h2>
-<p>Convert, merge and edit PDF files directly in your browser. No signup needed.</p>
+      <div class="badges">
+        <span class="badge">Free to use</span>
+        <span class="badge">No software install</span>
+        <span class="badge">Works in browser</span>
+      </div>
+    </section>
 
-<p style="margin-top:10px; text-align:center;">
-  <span style="background:#eaeaea; padding:6px 12px; border-radius:20px; margin:5px; display:inline-block;">✓ Free tools</span>
-  <span style="background:#eaeaea; padding:6px 12px; border-radius:20px; margin:5px; display:inline-block;">✓ No signup</span>
-  <span style="background:#eaeaea; padding:6px 12px; border-radius:20px; margin:5px; display:inline-block;">✓ Secure</span>
-</p>
+    <section class="tools-grid">
+      <div class="tool-card">
+        <h2>JPG to PDF</h2>
+        <p>Convert JPG, JPEG, or PNG images into one PDF document.</p>
+        <a href="/jpg-to-pdf.html">Open Tool</a>
+      </div>
 
-<div class="tool">
-<h3>JPG to PDF</h3>
-<p>Convert JPG or PNG images into a PDF file.</p>
-<a href="jpg-to-pdf.html"><button>Open Tool</button></a>
-</div>
+      <div class="tool-card">
+        <h2>PDF to JPG</h2>
+        <p>Convert PDF pages into JPG images and download them easily.</p>
+        <a href="/pdf-to-jpg.html">Open Tool</a>
+      </div>
 
-<div class="tool">
-<h3>PDF to JPG</h3>
-<p>Convert PDF pages into JPG images.</p>
-<a href="pdf-to-jpg.html"><button>Open Tool</button></a>
-</div>
+      <div class="tool-card">
+        <h2>Merge PDF</h2>
+        <p>Combine multiple PDF files into one clean PDF document.</p>
+        <a href="/merge-pdf.html">Open Tool</a>
+      </div>
 
-<div class="tool">
-<h3>Merge PDF</h3>
-<p>Combine multiple PDF files into one.</p>
-<a href="merge-pdf.html"><button>Open Tool</button></a>
-</div>
+      <div class="tool-card">
+        <h2>Split PDF</h2>
+        <p>Extract selected pages from a PDF and save a smaller file.</p>
+        <a href="/split-pdf.html">Open Tool</a>
+      </div>
 
-<div class="tool">
-<h3>Split PDF</h3>
-<p>Extract pages from your PDF file quickly.</p>
-<a href="split-pdf.html"><button>Open Tool</button></a>
-</div>
+      <div class="tool-card">
+        <h2>Rotate PDF</h2>
+        <p>Rotate PDF pages left, right, or upside down in your browser.</p>
+        <a href="/rotate-pdf.html">Open Tool</a>
+      </div>
 
-<div class="tool">
-<h3>Rotate PDF</h3>
-<p>Rotate PDF pages easily.</p>
-<a href="rotate-pdf.html"><button>Open Tool</button></a>
-</div>
+      <div class="tool-card">
+        <h2>Helpful Guides</h2>
+        <p>Read simple guides about converting and combining PDF files online.</p>
+        <a href="/how-to-convert-jpg-to-pdf.html">Read Guides</a>
+      </div>
+    </section>
 
-<div class="tool">
-  <h3>Helpful Guides</h3>
-  <p>Learn useful PDF tips and free online tools.</p>
+    <section class="seo-content">
+      <h2>Free Online PDF Tools for Everyday Documents</h2>
 
-  <div style="margin-top:10px;">
-    <a href="how-to-convert-jpg-to-pdf.html">
-      <button>JPG to PDF Guide</button>
-    </a>
-  </div>
+      <p>
+        ClickSellNow provides simple online PDF tools for common document tasks. You can convert images to PDF, convert PDF pages to JPG, merge multiple PDF files, split selected PDF pages, and rotate PDF pages directly in your browser.
+      </p>
 
-  <div style="margin-top:10px;">
-    <a href="how-to-merge-pdf.html">
-      <button>Merge PDF Guide</button>
-    </a>
-  </div>
+      <h2>What Can You Do with ClickSellNow?</h2>
 
-  <div style="margin-top:10px;">
-    <a href="best-ways-to-compress-pdf.html">
-      <button>Compress PDF Guide</button>
-    </a>
-  </div>
-</div>
+      <ul>
+        <li>Use the <a href="/jpg-to-pdf.html">JPG to PDF tool</a> to turn images into a PDF document.</li>
+        <li>Use the <a href="/pdf-to-jpg.html">PDF to JPG tool</a> to save PDF pages as image files.</li>
+        <li>Use the <a href="/merge-pdf.html">Merge PDF tool</a> to combine multiple PDFs into one file.</li>
+        <li>Use the <a href="/split-pdf.html">Split PDF tool</a> to extract selected pages from a PDF.</li>
+        <li>Use the <a href="/rotate-pdf.html">Rotate PDF tool</a> to fix sideways or upside-down PDF pages.</li>
+      </ul>
+
+      <h2>Why Use Online PDF Tools?</h2>
+
+      <p>
+        Online PDF tools are useful when you need to complete quick document tasks without installing extra software. They can help with school files, work documents, invoices, receipts, reports, scanned forms, applications, and daily paperwork.
+      </p>
+
+      <h2>Helpful PDF Guides</h2>
+
+      <p>
+        You can also read our step-by-step guides: <a href="/how-to-convert-jpg-to-pdf.html">How to Convert JPG to PDF Online</a> and <a href="/how-to-merge-pdf.html">How to Merge PDF Files Online</a>.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Are ClickSellNow PDF tools free?</h3>
+      <p>
+        Yes. You can use the PDF tools on ClickSellNow for free.
+      </p>
+
+      <h3>Do I need to install software?</h3>
+      <p>
+        No. The tools work online in your browser.
+      </p>
+
+      <h3>What tools are available?</h3>
+      <p>
+        You can use JPG to PDF, PDF to JPG, Merge PDF, Split PDF, and Rotate PDF tools.
+      </p>
+    </section>
+
+    <section class="related-tools">
+      <h2>Explore Free PDF Tools</h2>
+
+      <div class="tool-links">
+        <a href="/jpg-to-pdf.html">JPG to PDF</a>
+        <a href="/pdf-to-jpg.html">PDF to JPG</a>
+        <a href="/merge-pdf.html">Merge PDF</a>
+        <a href="/split-pdf.html">Split PDF</a>
+        <a href="/rotate-pdf.html">Rotate PDF</a>
+        <a href="/how-to-convert-jpg-to-pdf.html">JPG to PDF Guide</a>
+        <a href="/how-to-merge-pdf.html">Merge PDF Guide</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-  <a href="about.html">About</a> |
-  <a href="contact.html">Contact</a> |
-  <a href="privacy-policy.html">Privacy Policy</a> |
-  <a href="terms.html">Terms</a>
-  <br><br>
-  © 2026 ClickSellNow.com - Free Online Tools
-</footer>
-
+    <p>© 2026 ClickSellNow. Free online PDF tools for everyday document tasks.</p>
+  </footer>
 </body>
 </html>
