@@ -4,138 +4,318 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>About ClickSellNow - Free Online PDF Tools</title>
-  <meta name="description" content="Learn about ClickSellNow, a simple website offering free online PDF tools such as PDF converter, PDF merger, PDF compressor and image to PDF tools.">
+  <title>About ClickSellNow | Free Online PDF Tools</title>
+
+  <meta name="description" content="Learn about ClickSellNow, a simple website offering free online PDF tools to convert, merge, split, rotate, and manage PDF files directly in your browser." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.clicksellnow.com/about.html" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f8f9fa;
-      color: #111;
-      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8fb;
+      color: #1f2937;
     }
 
     header {
-      background: #000;
-      color: #fff;
-      padding: 22px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 24px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
       font-size: 24px;
-      font-weight: bold;
-    }
-
-    nav {
-      background: #111;
-      padding: 10px;
-    }
-
-    nav a {
-      color: #fff;
+      font-weight: 800;
+      color: #111827;
       text-decoration: none;
-      margin: 0 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
       font-size: 14px;
     }
 
-    .container {
-      max-width: 850px;
-      margin: 35px auto;
-      padding: 20px;
+    .nav-links a {
+      color: #374151;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    .content-section {
-      background: #fff;
-      text-align: left;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      max-width: 980px;
+      margin: 56px auto 30px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      color: #111827;
+    }
+
+    .hero p {
+      font-size: 18px;
       line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto;
+      color: #4b5563;
     }
 
-    h1 {
-      font-size: 32px;
+    .content-card {
+      max-width: 900px;
+      margin: 34px auto 60px;
+      padding: 38px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      line-height: 1.75;
+      font-size: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .content-card h2 {
+      margin-top: 34px;
+      margin-bottom: 12px;
+      font-size: 28px;
+      color: #111827;
+    }
+
+    .content-card h2:first-child {
       margin-top: 0;
     }
 
-    h2 {
-      font-size: 24px;
-      margin-top: 30px;
+    .content-card p {
+      margin: 0 0 14px;
+      color: #374151;
+    }
+
+    .content-card ul {
+      padding-left: 24px;
+      color: #374151;
+    }
+
+    .content-card li {
+      margin-bottom: 8px;
+    }
+
+    .content-card a {
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .tool-box {
+      padding: 18px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+    }
+
+    .tool-box h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      color: #111827;
+    }
+
+    .tool-box p {
+      margin: 0;
+      color: #4b5563;
     }
 
     footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 13px;
-      color: #666;
+      padding: 30px 20px;
+      text-align: center;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+      font-size: 14px;
     }
 
-    footer a {
-      color: #333;
-      text-decoration: none;
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #374151;
       margin: 0 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: #2563eb;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .content-card {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 24px;
+      }
+
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
-
   <header>
-    ClickSellNow - Free PDF Tools
+    <div class="nav">
+      <a class="logo" href="/">ClickSellNow</a>
+
+      <nav class="nav-links">
+        <a href="/jpg-to-pdf.html">JPG to PDF</a>
+        <a href="/pdf-to-jpg.html">PDF to JPG</a>
+        <a href="/merge-pdf.html">Merge PDF</a>
+        <a href="/split-pdf.html">Split PDF</a>
+        <a href="/rotate-pdf.html">Rotate PDF</a>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="pdf-to-word.html">PDF to Word</a>
-    <a href="merge-pdf.html">Merge PDF</a>
-    <a href="compress-pdf.html">Compress PDF</a>
-    <a href="split-pdf.html">Split PDF</a>
-    <a href="jpg-to-pdf.html">JPG to PDF</a>
-    <a href="pdf-to-jpg.html">PDF to JPG</a>
-  </nav>
-
-  <div class="container">
-    <div class="content-section">
+  <main>
+    <section class="hero">
       <h1>About ClickSellNow</h1>
+      <p>
+        ClickSellNow provides simple, free online PDF tools for everyday document tasks.
+      </p>
+    </section>
+
+    <section class="content-card">
+      <h2>Who We Are</h2>
 
       <p>
-        ClickSellNow is a simple online tools website created to help users work with PDF files quickly and easily.
-        Our goal is to provide useful, browser-based tools that make everyday document tasks easier.
+        ClickSellNow is a simple online tools website created to help users manage PDF files quickly and easily. Our goal is to make common document tasks more convenient without requiring complicated software.
       </p>
 
       <p>
-        Many people need to convert, merge, compress, split or organize PDF files for school, work, business,
-        applications, forms and personal documents. ClickSellNow aims to make these tasks simple and accessible.
+        Whether you need to convert images into PDF, turn PDF pages into JPG images, combine PDF files, split selected pages, or rotate a PDF, ClickSellNow gives you easy tools that work directly in your browser.
       </p>
 
       <h2>What We Offer</h2>
 
       <p>
-        ClickSellNow currently provides free online PDF tools, including PDF to Word, Merge PDF, Compress PDF,
-        Split PDF, JPG to PDF and PDF to JPG. More practical tools may be added over time.
+        Our website focuses on free online PDF tools that are useful for students, office workers, freelancers, small business owners, and everyday users.
+      </p>
+
+      <div class="tool-grid">
+        <div class="tool-box">
+          <h3>JPG to PDF</h3>
+          <p>Convert JPG, JPEG, or PNG images into one PDF document.</p>
+        </div>
+
+        <div class="tool-box">
+          <h3>PDF to JPG</h3>
+          <p>Convert PDF pages into JPG images for easy saving and sharing.</p>
+        </div>
+
+        <div class="tool-box">
+          <h3>Merge PDF</h3>
+          <p>Combine multiple PDF files into one organized document.</p>
+        </div>
+
+        <div class="tool-box">
+          <h3>Split PDF</h3>
+          <p>Extract selected pages from a PDF file and save a smaller document.</p>
+        </div>
+
+        <div class="tool-box">
+          <h3>Rotate PDF</h3>
+          <p>Fix sideways or upside-down PDF pages directly in your browser.</p>
+        </div>
+      </div>
+
+      <h2>Why ClickSellNow Exists</h2>
+
+      <p>
+        Many people need quick document tools for school, work, business, and daily paperwork. Installing heavy software can be inconvenient, especially when the task is simple. ClickSellNow was built to make these small PDF tasks easier.
+      </p>
+
+      <p>
+        Our tools are designed to be clear, direct, and beginner-friendly. You can open a tool, upload your file, complete the task, and download the result.
       </p>
 
       <h2>Our Mission</h2>
 
       <p>
-        Our mission is to build a clean, easy-to-use website where visitors can find simple tools without unnecessary
-        complexity. We focus on speed, simplicity and usefulness.
+        Our mission is to provide simple online PDF tools that help people save time and manage documents more easily.
       </p>
 
-      <h2>Important Note</h2>
+      <ul>
+        <li>Make PDF tools easy to access.</li>
+        <li>Keep the website simple and user-friendly.</li>
+        <li>Help users complete common document tasks quickly.</li>
+        <li>Provide helpful guides for PDF conversion and file management.</li>
+      </ul>
+
+      <h2>Helpful Guides</h2>
 
       <p>
-        Some tools are being improved step by step. We are working to make ClickSellNow more useful and reliable over time.
+        Besides tools, ClickSellNow also provides simple guides to help users understand how to complete PDF tasks online.
       </p>
-    </div>
-  </div>
+
+      <p>
+        You can read our guides on <a href="/how-to-convert-jpg-to-pdf.html">how to convert JPG to PDF</a> and <a href="/how-to-merge-pdf.html">how to merge PDF files online</a>.
+      </p>
+
+      <h2>Contact</h2>
+
+      <p>
+        If you have questions, suggestions, or feedback, please visit our <a href="/contact.html">Contact page</a>.
+      </p>
+    </section>
+  </main>
 
   <footer>
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="privacy-policy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms</a>
-    <br><br>
-    © 2026 ClickSellNow.com - Free Online Tools
-  </footer>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
 
+    <p>© 2026 ClickSellNow. Free online PDF tools for everyday document tasks.</p>
+  </footer>
 </body>
 </html>
