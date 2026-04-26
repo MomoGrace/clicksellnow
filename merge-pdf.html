@@ -176,7 +176,11 @@ pdfInput.addEventListener("change", function () {
     return;
   }
 
-  fileCount.textContent = this.files.length + " file(s) selected.";
+  const count = this.files.length;
+
+  fileCount.textContent = count === 1
+    ? "1 file selected"
+    : count + " files selected";
 
   Array.from(this.files).forEach((file, index) => {
     const item = document.createElement("li");
