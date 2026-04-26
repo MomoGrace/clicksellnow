@@ -3,68 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rotate PDF - ClickSellNow</title>
+
+<title>Rotate PDF Online - Free Tool | ClickSellNow</title>
+<meta name="description" content="Rotate PDF pages online for free. Rotate all pages in a PDF file directly in your browser with no upload required.">
 
 <style>
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f5f5;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #111;
+  text-align: center;
 }
-
 header {
-    background: #000;
-    color: #fff;
-    padding: 20px;
-    font-size: 22px;
+  background: #000;
+  color: #fff;
+  padding: 22px;
+  font-size: 24px;
+  font-weight: bold;
 }
-
 nav {
-    background: #111;
-    padding: 10px;
+  background: #111;
+  padding: 10px;
 }
-
 nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
 }
-
 .container {
-    padding: 30px;
-    max-width: 900px;
-    margin: auto;
+  max-width: 850px;
+  margin: 35px auto;
+  padding: 20px;
 }
-
-.tool-box {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.tool-box, .content-section {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  margin-bottom: 25px;
 }
-
+input, select {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  width: 90%;
+  max-width: 420px;
+}
 button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
 }
-
-select {
-    padding: 8px;
-    margin-top: 10px;
+button:hover {
+  background: #0056b3;
 }
-
+.note {
+  color: #666;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.content-section {
+  text-align: left;
+  line-height: 1.7;
+}
 footer {
-    margin-top: 30px;
-    padding: 15px;
-    font-size: 12px;
-    color: #666;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 13px;
+  color: #666;
+}
+footer a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 8px;
 }
 </style>
 </head>
@@ -77,35 +96,65 @@ ClickSellNow - Free PDF Tools
 
 <nav>
 <a href="index.html">Home</a>
-<a href="pdf-to-word.html">PDF to Word</a>
-<a href="merge-pdf.html">Merge PDF</a>
-<a href="compress-pdf.html">Compress PDF</a>
-<a href="split-pdf.html">Split PDF</a>
 <a href="jpg-to-pdf.html">JPG to PDF</a>
 <a href="pdf-to-jpg.html">PDF to JPG</a>
+<a href="merge-pdf.html">Merge PDF</a>
+<a href="split-pdf.html">Split PDF</a>
+<a href="rotate-pdf.html">Rotate PDF</a>
 </nav>
 
 <div class="container">
-<div class="tool-box">
 
-<h2>Rotate PDF Online</h2>
-<p>Rotate your PDF pages easily in your browser.</p>
+  <div class="tool-box">
+    <h1>Rotate PDF Online</h1>
+    <p>Rotate all pages in your PDF file directly in your browser.</p>
 
-<input type="file" accept="application/pdf"><br>
+    <input type="file" id="pdfFile" accept="application/pdf">
+    <br>
 
-<select>
-<option>Rotate 90°</option>
-<option>Rotate 180°</option>
-<option>Rotate 270°</option>
-</select><br>
+    <select id="rotation">
+      <option value="90">Rotate 90° clockwise</option>
+      <option value="180">Rotate 180°</option>
+      <option value="270">Rotate 270° clockwise</option>
+    </select>
+    <br>
 
-<button>Rotate PDF</button>
+    <button onclick="rotatePDF()">Rotate PDF</button>
 
-<p style="color:#888; font-size:13px;">
-Select a PDF file to begin.
-</p>
+    <p style="color:#28a745; font-size:14px; margin-top:10px;">
+      ✓ Files are processed locally in your browser. No upload required.
+    </p>
 
-</div>
+    <p class="note" id="message">Select a PDF file and rotation angle to begin.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Rotate PDF Pages Online</h2>
+    <p>
+      This Rotate PDF tool lets you rotate all pages in a PDF file.
+      It works directly in your browser, so your file is processed locally and is not uploaded to a server.
+    </p>
+
+    <h2>How to Use</h2>
+    <ol>
+      <li>Select a PDF file from your device.</li>
+      <li>Choose a rotation angle.</li>
+      <li>Click the Rotate PDF button.</li>
+      <li>Your rotated PDF will download automatically.</li>
+    </ol>
+
+    <h2>FAQ</h2>
+
+    <h3>Can I rotate PDF pages online?</h3>
+    <p>Yes. You can rotate PDF pages directly in your browser using this tool.</p>
+
+    <h3>Is my PDF uploaded?</h3>
+    <p>No. This tool processes your file locally in your browser.</p>
+
+    <h3>Does this rotate all pages?</h3>
+    <p>Yes. This version rotates all pages in the selected PDF file.</p>
+  </div>
+
 </div>
 
 <footer>
@@ -116,6 +165,50 @@ Select a PDF file to begin.
 <br><br>
 © 2026 ClickSellNow.com - Free Online Tools
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+
+<script>
+async function rotatePDF() {
+  const fileInput = document.getElementById("pdfFile");
+  const rotationSelect = document.getElementById("rotation");
+  const message = document.getElementById("message");
+
+  if (!fileInput.files.length) {
+    message.textContent = "Please select a PDF file.";
+    return;
+  }
+
+  message.textContent = "Rotating PDF. Please wait...";
+
+  try {
+    const file = fileInput.files[0];
+    const rotation = Number(rotationSelect.value);
+    const bytes = await file.arrayBuffer();
+
+    const pdfDoc = await PDFLib.PDFDocument.load(bytes);
+    const pages = pdfDoc.getPages();
+
+    pages.forEach((page) => {
+      page.setRotation(PDFLib.degrees(rotation));
+    });
+
+    const pdfBytes = await pdfDoc.save();
+    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "rotated.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    message.textContent = "Done! Your rotated PDF has been downloaded.";
+  } catch (error) {
+    message.textContent = "Something went wrong. Please try another PDF file.";
+  }
+}
+</script>
 
 </body>
 </html>
