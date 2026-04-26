@@ -1,211 +1,706 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>JPG to PDF Converter - Free Online Tool | ClickSellNow</title>
-<meta name="description" content="Convert JPG or PNG images to PDF online for free. Upload images and download a PDF file directly from your browser.">
+  <title>JPG to PDF Online for Free – Convert Images to PDF Fast | ClickSellNow</title>
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f8f9fa;
-  color: #111;
-  text-align: center;
-}
-header {
-  background: #000;
-  color: #fff;
-  padding: 22px;
-  font-size: 24px;
-  font-weight: bold;
-}
-nav {
-  background: #111;
-  padding: 10px;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 14px;
-}
-.container {
-  max-width: 850px;
-  margin: 35px auto;
-  padding: 20px;
-}
-.tool-box, .content-section {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  margin-bottom: 25px;
-}
-input[type="file"] {
-  margin: 15px 0;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fafafa;
-  width: 90%;
-  max-width: 420px;
-}
-button {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 13px 24px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-}
-button:hover {
-  background: #0056b3;
-}
-.note {
-  color: #666;
-  font-size: 14px;
-  margin-top: 15px;
-}
-.content-section {
-  text-align: left;
-  line-height: 1.7;
-}
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  font-size: 13px;
-  color: #666;
-}
-footer a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 8px;
-}
-</style>
+  <meta name="description" content="Convert JPG to PDF online for free. Upload images, combine them into one PDF file, and download instantly. Fast, simple, and easy to use." />
+
+  <meta name="keywords" content="JPG to PDF online, JPG to PDF free, convert JPG to PDF, image to PDF, photo to PDF, JPEG to PDF converter" />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.clicksellnow.com/jpg-to-pdf.html" />
+
+  <meta property="og:title" content="JPG to PDF Online for Free – Convert Images to PDF Fast" />
+  <meta property="og:description" content="Use ClickSellNow to convert JPG images to PDF online for free. Upload images and download one PDF file instantly." />
+  <meta property="og:url" content="https://www.clicksellnow.com/jpg-to-pdf.html" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8fb;
+      color: #1f2937;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 24px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #374151;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      max-width: 980px;
+      margin: 48px auto 20px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      color: #111827;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto;
+      color: #4b5563;
+    }
+
+    .tool-card {
+      max-width: 760px;
+      margin: 34px auto;
+      padding: 30px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .upload-box {
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      background: #f9fafb;
+    }
+
+    .upload-box input {
+      margin-top: 16px;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .hint {
+      margin-top: 12px;
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .file-list {
+      margin-top: 20px;
+      padding: 16px;
+      background: #f3f4f6;
+      border-radius: 12px;
+      display: none;
+    }
+
+    .file-list h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #111827;
+    }
+
+    .file-list ol {
+      margin: 0;
+      padding-left: 22px;
+      color: #374151;
+      line-height: 1.7;
+    }
+
+    .button {
+      width: 100%;
+      margin-top: 24px;
+      padding: 15px 18px;
+      border: none;
+      border-radius: 12px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
+    }
+
+    .button:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #f3f4f6;
+      color: #374151;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .download-link {
+      display: none;
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .download-link a {
+      display: inline-block;
+      padding: 14px 20px;
+      background: #16a34a;
+      color: #ffffff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .features {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-box {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .feature-box h3 {
+      margin: 0 0 10px;
+      color: #111827;
+      font-size: 20px;
+    }
+
+    .feature-box p {
+      margin: 0;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .seo-content {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 34px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .seo-content h2 {
+      margin-top: 34px;
+      margin-bottom: 12px;
+      font-size: 28px;
+      color: #111827;
+    }
+
+    .seo-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-content h3 {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 21px;
+      color: #111827;
+    }
+
+    .seo-content p {
+      margin: 0 0 14px;
+      color: #374151;
+    }
+
+    .seo-content ol,
+    .seo-content ul {
+      padding-left: 24px;
+      color: #374151;
+    }
+
+    .seo-content a {
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .related-tools {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .related-tools h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .tool-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .tool-links a {
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      color: #111827;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .tool-links a:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-card,
+      .seo-content {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 24px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "JPG to PDF Online for Free",
+    "url": "https://www.clicksellnow.com/jpg-to-pdf.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "description": "Convert JPG to PDF online for free. Upload images, combine them into one PDF file, and download instantly.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I convert JPG to PDF online for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can use this free online JPG to PDF converter to turn images into a PDF file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert multiple JPG images into one PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can upload multiple JPG images and combine them into one PDF document."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install software to convert JPG to PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This JPG to PDF tool works directly in your browser without software installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use PNG images too?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This tool supports JPG, JPEG, and PNG image files."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <header>
+    <div class="nav">
+      <a class="logo" href="/">ClickSellNow</a>
 
-<header>
-ClickSellNow - Free PDF Tools
-</header>
+      <nav class="nav-links">
+        <a href="/jpg-to-pdf.html">JPG to PDF</a>
+        <a href="/pdf-to-jpg.html">PDF to JPG</a>
+        <a href="/merge-pdf.html">Merge PDF</a>
+        <a href="/split-pdf.html">Split PDF</a>
+        <a href="/rotate-pdf.html">Rotate PDF</a>
+      </nav>
+    </div>
+  </header>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="jpg-to-pdf.html">JPG to PDF</a>
-<a href="pdf-to-jpg.html">PDF to JPG</a>
-<a href="merge-pdf.html">Merge PDF</a>
-<a href="split-pdf.html">Split PDF</a>
-<a href="rotate-pdf.html">Rotate PDF</a>
-</nav>
+  <main>
+    <section class="hero">
+      <h1>JPG to PDF Online for Free</h1>
+      <p>
+        Convert JPG images into a PDF file. Upload one or multiple images and download a clean PDF document instantly.
+      </p>
+    </section>
 
-<div class="container">
+    <section class="tool-card">
+      <div class="upload-box">
+        <h2>Upload Your Images</h2>
+        <p>Select JPG, JPEG, or PNG images to convert into one PDF file.</p>
+        <input type="file" id="imageFiles" accept="image/jpeg,image/jpg,image/png" multiple />
+        <div class="hint">
+          Tip: Select images in the order you want them to appear in the PDF.
+        </div>
+      </div>
 
-  <div class="tool-box">
-    <h1>JPG to PDF Converter</h1>
-    <p>Convert JPG or PNG images into a PDF file directly in your browser.</p>
+      <div class="file-list" id="fileListBox">
+        <h3>Selected Images</h3>
+        <ol id="fileList"></ol>
+      </div>
 
-    <input type="file" id="imageFiles" accept="image/jpeg,image/png" multiple>
-    <br>
+      <button class="button" id="convertButton">Convert JPG to PDF</button>
 
-    <button onclick="convertImagesToPDF()">Convert to PDF</button>
-<p style="color:#28a745; font-size:14px; margin-top:10px;">
-✓ Files are processed locally in your browser. No upload required.
-</p>
-    <p class="note" id="message">Select one or more JPG or PNG images to begin.</p>
-  </div>
+      <div class="status" id="statusBox"></div>
 
-  <div class="content-section">
-    <h2>Convert Images to PDF Online</h2>
-    <p>
-      This JPG to PDF tool lets you turn image files into a PDF document.
-      You can upload one or more JPG or PNG images and download them as a single PDF file.
-    </p>
+      <div class="download-link" id="downloadBox">
+        <a id="downloadLink" href="#" download="jpg-to-pdf.pdf">Download PDF</a>
+      </div>
+    </section>
 
-    <h2>How to Use</h2>
-    <ol>
-      <li>Select one or more JPG or PNG images.</li>
-      <li>Click the Convert to PDF button.</li>
-      <li>Your PDF will be generated in your browser.</li>
-      <li>The PDF file will download automatically.</li>
-    </ol>
+    <section class="features">
+      <div class="feature-box">
+        <h3>Free to Use</h3>
+        <p>Convert images to PDF online without paying for expensive software.</p>
+      </div>
 
-    <h2>Privacy Note</h2>
-    <p>
-      This tool works directly in your browser. Your images are processed locally and are not uploaded to a server.
-    </p>
-  </div>
+      <div class="feature-box">
+        <h3>Multiple Images</h3>
+        <p>Upload one image or combine several images into one PDF document.</p>
+      </div>
 
-</div>
+      <div class="feature-box">
+        <h3>Works in Browser</h3>
+        <p>No installation is required. Use it on desktop, tablet, or mobile.</p>
+      </div>
+    </section>
 
-<footer>
-<a href="about.html">About</a> |
-<a href="contact.html">Contact</a> |
-<a href="privacy-policy.html">Privacy Policy</a> |
-<a href="terms.html">Terms</a>
-<br><br>
-© 2026 ClickSellNow.com - Free Online Tools
-</footer>
+    <section class="seo-content">
+      <h2>JPG to PDF Online for Free</h2>
 
-<script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+      <p>
+        Need to turn images into a PDF file? Our free JPG to PDF tool helps you convert JPG, JPEG, and PNG images into a clean PDF document. It is useful for students, office workers, business owners, freelancers, and anyone who needs to save photos, receipts, forms, or scanned pages as PDF.
+      </p>
 
-<script>
-async function convertImagesToPDF() {
-  const fileInput = document.getElementById("imageFiles");
-  const message = document.getElementById("message");
+      <h2>How to Convert JPG to PDF Online</h2>
 
-  if (!fileInput.files.length) {
-    message.textContent = "Please choose at least one JPG or PNG image.";
-    return;
-  }
+      <p>
+        Converting JPG to PDF is simple. Upload your image files, check the order, and click the Convert JPG to PDF button. The tool will create one PDF file that you can download instantly.
+      </p>
 
-  message.textContent = "Creating PDF. Please wait...";
+      <h3>Steps to convert JPG to PDF:</h3>
 
-  try {
-    const pdfDoc = await PDFLib.PDFDocument.create();
+      <ol>
+        <li>Upload your JPG, JPEG, or PNG images.</li>
+        <li>Check the selected image order.</li>
+        <li>Click the Convert JPG to PDF button.</li>
+        <li>Download your new PDF file.</li>
+      </ol>
 
-    for (const file of fileInput.files) {
-      const imageBytes = await file.arrayBuffer();
-      let image;
+      <h2>Why Convert Images to PDF?</h2>
 
-      if (file.type === "image/jpeg") {
-        image = await pdfDoc.embedJpg(imageBytes);
-      } else if (file.type === "image/png") {
-        image = await pdfDoc.embedPng(imageBytes);
-      } else {
-        continue;
+      <p>
+        PDF files are easier to share, print, upload, and store. Instead of sending many separate image files, you can combine them into one organized PDF document. This is helpful for school submissions, job applications, invoices, receipts, forms, and business documents.
+      </p>
+
+      <h2>Convert Multiple JPG Images into One PDF</h2>
+
+      <p>
+        This tool allows you to upload multiple images and combine them into one PDF file. Each image will become a separate page in the PDF, making your document easier to read and manage.
+      </p>
+
+      <h2>Common Uses for JPG to PDF</h2>
+
+      <p>
+        People often convert JPG to PDF when working with scanned documents, ID copies, receipts, handwritten notes, homework pages, application forms, product images, invoices, and photo records. A PDF file keeps everything together in one clean document.
+      </p>
+
+      <h2>Is This JPG to PDF Tool Free?</h2>
+
+      <p>
+        Yes. You can use this JPG to PDF tool for free. There is no need to install software. It works directly in your browser, making it simple to convert images to PDF from your computer, tablet, or phone.
+      </p>
+
+      <h2>JPG to PDF, PDF to JPG, and More PDF Tools</h2>
+
+      <p>
+        After converting images to PDF, you may also want to combine files with our <a href="/merge-pdf.html">Merge PDF tool</a>, extract pages with our <a href="/split-pdf.html">Split PDF tool</a>, or convert PDF pages into images with our <a href="/pdf-to-jpg.html">PDF to JPG tool</a>.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Can I convert JPG to PDF online for free?</h3>
+      <p>
+        Yes. You can convert JPG images into a PDF file online for free using this tool.
+      </p>
+
+      <h3>Can I convert multiple images into one PDF?</h3>
+      <p>
+        Yes. You can upload multiple images and combine them into one PDF document.
+      </p>
+
+      <h3>Do I need to install any software?</h3>
+      <p>
+        No. This tool works online in your browser, so you do not need to install extra software.
+      </p>
+
+      <h3>Can I upload PNG images too?</h3>
+      <p>
+        Yes. This tool supports JPG, JPEG, and PNG images.
+      </p>
+    </section>
+
+    <section class="related-tools">
+      <h2>More Free PDF Tools</h2>
+
+      <div class="tool-links">
+        <a href="/pdf-to-jpg.html">PDF to JPG</a>
+        <a href="/merge-pdf.html">Merge PDF</a>
+        <a href="/split-pdf.html">Split PDF</a>
+        <a href="/rotate-pdf.html">Rotate PDF</a>
+        <a href="/how-to-convert-jpg-to-pdf.html">How to Convert JPG to PDF</a>
+        <a href="/how-to-merge-pdf.html">How to Merge PDF</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 ClickSellNow. Free online PDF tools for everyday document tasks.</p>
+  </footer>
+
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+  <script>
+    const imageFilesInput = document.getElementById("imageFiles");
+    const convertButton = document.getElementById("convertButton");
+    const statusBox = document.getElementById("statusBox");
+    const downloadBox = document.getElementById("downloadBox");
+    const downloadLink = document.getElementById("downloadLink");
+    const fileListBox = document.getElementById("fileListBox");
+    const fileList = document.getElementById("fileList");
+
+    function showStatus(message) {
+      statusBox.style.display = "block";
+      statusBox.textContent = message;
+    }
+
+    function hideDownload() {
+      downloadBox.style.display = "none";
+      downloadLink.removeAttribute("href");
+    }
+
+    function updateFileList() {
+      fileList.innerHTML = "";
+
+      const files = Array.from(imageFilesInput.files);
+
+      if (files.length === 0) {
+        fileListBox.style.display = "none";
+        return;
       }
 
-      const page = pdfDoc.addPage([image.width, image.height]);
+      fileListBox.style.display = "block";
 
-      page.drawImage(image, {
-        x: 0,
-        y: 0,
-        width: image.width,
-        height: image.height
+      files.forEach(function (file) {
+        const li = document.createElement("li");
+        li.textContent = file.name;
+        fileList.appendChild(li);
       });
     }
 
-    const pdfBytes = await pdfDoc.save();
-    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+    function isImageFile(file) {
+      const name = file.name.toLowerCase();
+      return (
+        file.type === "image/jpeg" ||
+        file.type === "image/png" ||
+        name.endsWith(".jpg") ||
+        name.endsWith(".jpeg") ||
+        name.endsWith(".png")
+      );
+    }
 
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "converted-images.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    async function getImageDimensions(file) {
+      return new Promise(function (resolve, reject) {
+        const img = new Image();
+        const url = URL.createObjectURL(file);
 
-    message.textContent = "Done! Your PDF has been downloaded.";
-  } catch (error) {
-    message.textContent = "Something went wrong. Please try another image.";
-  }
-}
-</script>
+        img.onload = function () {
+          const dimensions = {
+            width: img.width,
+            height: img.height
+          };
 
+          URL.revokeObjectURL(url);
+          resolve(dimensions);
+        };
+
+        img.onerror = function () {
+          URL.revokeObjectURL(url);
+          reject(new Error("Unable to read image size."));
+        };
+
+        img.src = url;
+      });
+    }
+
+    imageFilesInput.addEventListener("change", updateFileList);
+
+    convertButton.addEventListener("click", async function () {
+      try {
+        hideDownload();
+
+        const files = Array.from(imageFilesInput.files);
+
+        if (files.length === 0) {
+          showStatus("Please upload at least one image file.");
+          return;
+        }
+
+        for (const file of files) {
+          if (!isImageFile(file)) {
+            showStatus("Please upload JPG, JPEG, or PNG image files only.");
+            return;
+          }
+        }
+
+        convertButton.disabled = true;
+        showStatus("Converting your images to PDF. Please wait...");
+
+        const pdfDoc = await PDFLib.PDFDocument.create();
+
+        for (const file of files) {
+          const arrayBuffer = await file.arrayBuffer();
+          const dimensions = await getImageDimensions(file);
+
+          let embeddedImage;
+
+          if (file.type === "image/png" || file.name.toLowerCase().endsWith(".png")) {
+            embeddedImage = await pdfDoc.embedPng(arrayBuffer);
+          } else {
+            embeddedImage = await pdfDoc.embedJpg(arrayBuffer);
+          }
+
+          const pageWidth = 595.28;
+          const pageHeight = 841.89;
+          const margin = 36;
+
+          const maxWidth = pageWidth - margin * 2;
+          const maxHeight = pageHeight - margin * 2;
+
+          const widthRatio = maxWidth / dimensions.width;
+          const heightRatio = maxHeight / dimensions.height;
+          const scale = Math.min(widthRatio, heightRatio);
+
+          const imageWidth = dimensions.width * scale;
+          const imageHeight = dimensions.height * scale;
+
+          const page = pdfDoc.addPage([pageWidth, pageHeight]);
+
+          page.drawImage(embeddedImage, {
+            x: (pageWidth - imageWidth) / 2,
+            y: (pageHeight - imageHeight) / 2,
+            width: imageWidth,
+            height: imageHeight
+          });
+        }
+
+        const pdfBytes = await pdfDoc.save();
+
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+
+        downloadLink.href = url;
+        downloadLink.download = "jpg-to-pdf.pdf";
+        downloadBox.style.display = "block";
+
+        showStatus("Done. Your PDF is ready to download.");
+      } catch (error) {
+        showStatus(error.message || "Something went wrong. Please try again.");
+      } finally {
+        convertButton.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
