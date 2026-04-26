@@ -1,208 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Merge PDF Online - Free PDF Combiner | ClickSellNow</title>
-  <meta name="description" content="Merge PDF files online for free. Combine multiple PDF documents into one file easily. Simple, fast and no signup required.">
+<title>Merge PDF Files Online - Free Tool | ClickSellNow</title>
+<meta name="description" content="Merge multiple PDF files into one online for free. Combine PDFs directly in your browser.">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f8f9fa;
-      color: #111;
-      text-align: center;
-    }
-
-    header {
-      background: #000;
-      color: #fff;
-      padding: 22px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    nav {
-      background: #111;
-      padding: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 14px;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-
-    .tool-box {
-      background: #fff;
-      padding: 35px 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: #555;
-      font-size: 16px;
-      margin-bottom: 25px;
-    }
-
-    input[type="file"] {
-      margin: 15px 0;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #fafafa;
-      width: 90%;
-      max-width: 400px;
-    }
-
-    button {
-      background: #007bff;
-      color: #fff;
-      border: none;
-      padding: 13px 24px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 15px;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-
-    .note {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    .content-section {
-      background: #fff;
-      text-align: left;
-      padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      margin-bottom: 25px;
-      line-height: 1.7;
-    }
-
-    .content-section h2 {
-      font-size: 24px;
-      margin-top: 0;
-    }
-
-    .content-section ul {
-      padding-left: 22px;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 13px;
-      color: #666;
-    }
-  </style>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+header {
+  background: #000;
+  color: #fff;
+  padding: 22px;
+  font-size: 24px;
+}
+nav {
+  background: #111;
+  padding: 10px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+.container {
+  max-width: 850px;
+  margin: 35px auto;
+  padding: 20px;
+}
+.tool-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+input {
+  margin: 15px 0;
+  padding: 10px;
+}
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+.note {
+  color: #666;
+  font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    ClickSellNow - Free PDF Tools
-  </header>
+<header>ClickSellNow - Free PDF Tools</header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="pdf-to-word.html">PDF to Word</a>
-    <a href="merge-pdf.html">Merge PDF</a>
-    <a href="compress-pdf.html">Compress PDF</a>
-  </nav>
+<nav>
+<a href="index.html">Home</a>
+<a href="jpg-to-pdf.html">JPG to PDF</a>
+<a href="pdf-to-jpg.html">PDF to JPG</a>
+<a href="merge-pdf.html">Merge PDF</a>
+<a href="split-pdf.html">Split PDF</a>
+<a href="rotate-pdf.html">Rotate PDF</a>
+</nav>
 
-  <div class="container">
+<div class="container">
+<div class="tool-box">
 
-    <div class="tool-box">
-      <h1>Merge PDF Online</h1>
-      <p class="subtitle">Combine multiple PDF files into one document quickly and easily.</p>
+<h1>Merge PDF Files</h1>
+<p>Combine multiple PDF files into a single document in your browser.</p>
 
-      <input type="file" id="pdfFiles" accept="application/pdf" multiple />
-      <br>
-      <button onclick="showMessage()">Upload PDF Files</button>
+<input type="file" id="pdfFiles" multiple accept="application/pdf">
+<br>
 
-      <p class="note" id="message">Select two or more PDF files to begin.</p>
-    </div>
+<button onclick="mergePDF()">Merge PDF</button>
 
-    <div class="content-section">
-      <h2>Merge PDF Files for Free</h2>
-      <p>
-        Our Merge PDF tool helps you organize multiple PDF documents into one file.
-        This is useful when you want to combine reports, forms, scanned pages, worksheets,
-        invoices or documents into a single PDF.
-      </p>
-      <p>
-        You can select multiple PDF files directly from your device and prepare them for merging.
-        More advanced functions will be improved step by step.
-      </p>
-    </div>
+<p style="color:#28a745; font-size:14px; margin-top:10px;">
+✓ Files are processed locally in your browser. No upload required.
+</p>
 
-    <div class="content-section">
-      <h2>Why Merge PDF Files?</h2>
-      <ul>
-        <li>Combine separate PDF documents into one file.</li>
-        <li>Organize scanned pages into a single document.</li>
-        <li>Make reports, invoices and forms easier to share.</li>
-        <li>Save time compared to sending many separate files.</li>
-      </ul>
-    </div>
+<p class="note" id="message">Select PDF files to merge.</p>
 
-    <div class="content-section">
-      <h2>How to Merge PDF Files</h2>
-      <ul>
-        <li>Choose two or more PDF files from your device.</li>
-        <li>Upload the selected PDF files.</li>
-        <li>Arrange and combine the files when the full feature is available.</li>
-        <li>Download your merged PDF document.</li>
-      </ul>
-    </div>
+</div>
+</div>
 
-  </div>
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
 
-  <footer>
-    © 2026 ClickSellNow.com - Free Online Tools
-  </footer>
+<script>
+async function mergePDF() {
+  const files = document.getElementById("pdfFiles").files;
+  const message = document.getElementById("message");
 
-  <script>
-    function showMessage() {
-      const fileInput = document.getElementById("pdfFiles");
-      const message = document.getElementById("message");
+  if (!files.length) {
+    message.textContent = "Please select PDF files.";
+    return;
+  }
 
-      if (!fileInput.files.length) {
-        message.textContent = "Please choose PDF files first.";
-        return;
-      }
+  message.textContent = "Merging PDFs...";
 
-      if (fileInput.files.length < 2) {
-        message.textContent = "Please select at least two PDF files to merge.";
-        return;
-      }
+  const mergedPdf = await PDFLib.PDFDocument.create();
 
-      message.textContent = fileInput.files.length + " PDF files selected. Merge feature is being prepared.";
-    }
-  </script>
+  for (const file of files) {
+    const bytes = await file.arrayBuffer();
+    const pdf = await PDFLib.PDFDocument.load(bytes);
+
+    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+    copiedPages.forEach((page) => mergedPdf.addPage(page));
+  }
+
+  const pdfBytes = await mergedPdf.save();
+
+  const blob = new Blob([pdfBytes], { type: "application/pdf" });
+  const link = document.createElement("a");
+
+  link.href = URL.createObjectURL(blob);
+  link.download = "merged.pdf";
+  link.click();
+
+  message.textContent = "Done! Your merged PDF has been downloaded.";
+}
+</script>
 
 </body>
 </html>
