@@ -60,19 +60,30 @@
   <url>
     <loc>https://www.clicksellnow.com/blog.html</loc>
     <lastmod>2026-04-29</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <url><loc>https://www.clicksellnow.com/post.html?slug=split-pdf-online</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clicksellnow.com/post.html?slug=merge-pdf-online</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clicksellnow.com/post.html?slug=compress-pdf-online</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clicksellnow.com/post.html?slug=pdf-to-jpg</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clicksellnow.com/post.html?slug=jpg-to-pdf</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clicksellnow.com/post.html?slug=protect-pdf</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clicksellnow.com/post.html?slug=unlock-pdf</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clicksellnow.com/post.html?slug=ai-tools-small-business</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clicksellnow.com/post.html?slug=free-online-tools</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.clicksellnow.com/post.html?slug=split-pdf-online</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.clicksellnow.com/post.html?slug=merge-pdf-online</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.clicksellnow.com/post.html?slug=compress-pdf-online</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <url>
     <loc>https://www.clicksellnow.com/about.html</loc>
