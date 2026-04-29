@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post</title>
+</head>
+<body>
+
+<div id="content"></div>
+
+<script src="blog-data.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("slug");
+
+const post = posts.find(p => p.slug === slug);
+
+document.getElementById("content").innerHTML = post ? post.content : "Not found";
+</script>
+
+</body>
+</html>
