@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+</head>
+<body>
+
+<h1>Blog</h1>
+<div id="posts"></div>
+
+<script src="blog-data.js"></script>
+<script>
+const container = document.getElementById("posts");
+
+posts.forEach(p => {
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <h2><a href="post.html?slug=${p.slug}">${p.title}</a></h2>
+    <p>${p.description}</p>
+  `;
+  container.appendChild(div);
+});
+</script>
+
+</body>
+</html>
