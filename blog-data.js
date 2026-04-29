@@ -223,4 +223,76 @@ const posts = [
 <p>Compressing PDF files online is a practical way to make documents easier to upload, send, and store. It helps reduce file size while keeping the content usable. Whether you are sending a resume, uploading a form, or sharing a report, PDF compression can make the process faster and smoother.</p>
 `
   }
+  {
+slug: "pdf-to-jpg-online",
+title: "Convert PDF to JPG Online Free – Easy Image Conversion",
+description: "Learn how to convert PDF files into JPG images online for free with high quality and fast processing.",
+content: `
+<h1>Convert PDF to JPG Online Free – Easy Image Conversion</h1>
+
+<p>Converting a PDF to JPG is useful when you need to turn document pages into images. This is helpful for sharing, presentations, or uploading files where images are required instead of PDF format.</p>
+
+<h2>What Is PDF to JPG Conversion?</h2>
+<p>This process converts each page of a PDF file into an image format such as JPG. It allows you to use document content in visual formats.</p>
+
+<h2>How to Convert PDF to JPG</h2>
+<ol>
+<li>Upload your PDF file</li>
+<li>Select conversion option</li>
+<li>Download JPG images</li>
+</ol>
+
+<h2>Benefits</h2>
+<ul>
+<li>Easy sharing on social media</li>
+<li>Use in presentations</li>
+<li>Better compatibility across devices</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>PDF to JPG conversion is a simple way to transform documents into images for flexible usage.</p>
+
+<h2>Related Tools</h2>
+<ul>
+<li><a href="post.html?slug=split-pdf-online">Split PDF</a></li>
+<li><a href="post.html?slug=merge-pdf-online">Merge PDF</a></li>
+</ul>
+`
+},
+  {
+slug: "jpg-to-pdf-online",
+title: "Convert JPG to PDF Online Free – Combine Images Easily",
+description: "Learn how to convert JPG images into a single PDF file online quickly and easily.",
+content: `
+<h1>Convert JPG to PDF Online Free – Combine Images Easily</h1>
+
+<p>Converting JPG images into PDF files is useful for organizing photos, documents, or scanned pages into one clean file.</p>
+
+<h2>What Is JPG to PDF?</h2>
+<p>This tool combines multiple images into a single PDF document.</p>
+
+<h2>Steps</h2>
+<ol>
+<li>Upload images</li>
+<li>Arrange order</li>
+<li>Convert to PDF</li>
+</ol>
+
+<h2>Benefits</h2>
+<ul>
+<li>Create reports from images</li>
+<li>Easy file sharing</li>
+<li>Professional formatting</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>JPG to PDF conversion helps turn images into organized documents.</p>
+
+<h2>Related Tools</h2>
+<ul>
+<li><a href="post.html?slug=compress-pdf-online">Compress PDF</a></li>
+<li><a href="post.html?slug=split-pdf-online">Split PDF</a></li>
+</ul>
+`
+},
 ];
