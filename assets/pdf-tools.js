@@ -27,6 +27,7 @@
     'pdf-file-info-viewer': {accept:'.pdf', multiple:false, action:'fileInfo', button:'View PDF Info'}
   };
   let files=[], originalFiles=[];
+  const previewState = new Map();
   const $ = (sel, root=document)=>root.querySelector(sel);
   function formatBytes(bytes){ if(!bytes) return '0 B'; const u=['B','KB','MB','GB']; let i=0,n=bytes; while(n>=1024&&i<u.length-1){n/=1024;i++;} return `${n.toFixed(n>=10||i===0?0:1)} ${u[i]}`; }
   function safeName(name){ return String(name||'file').replace(/[^a-z0-9._-]+/gi,'-').replace(/-+/g,'-'); }
@@ -34,10 +35,59 @@
   function fileToArrayBuffer(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=()=>rej(new Error('Could not read file')); r.readAsArrayBuffer(file); }); }
   function fileToDataURL(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=()=>rej(new Error('Could not read file')); r.readAsDataURL(file); }); }
   function downloadBlob(blob, filename){ const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},1200); }
+  function getFileTypeLabel(file){
+    if ((file.type||'').toLowerCase()==='application/pdf' || file.name.toLowerCase().endsWith('.pdf')) return 'PDF';
+    if ((file.type||'').startsWith('image/')) return file.type.toUpperCase();
+    return file.type || 'Unknown';
+  }
+  function makePlaceholderPreview(label='FILE'){
+    return `<div class="file-preview-placeholder" aria-label="Preview unavailable">${escapeHtml(label)}</div>`;
+  }
+  function queuePreview(item){
+    const f=item.file;
+    if (previewState.has(item.id)) return;
+    previewState.set(item.id,{state:'loading',kind:'placeholder',label:'Loading preview…'});
+    if ((f.type||'').startsWith('image/')){
+      fileToDataURL(f).then(url=>{
+        previewState.set(item.id,{state:'ready',kind:'image',src:url});
+        renderFiles(window.__clicksellCfg);
+        status('Preview ready.','ok');
+      }).catch(()=>{
+        previewState.set(item.id,{state:'unavailable',kind:'placeholder',label:'Preview unavailable'});
+        renderFiles(window.__clicksellCfg);
+        status('Preview unavailable, but the file can still be processed.','');
+      });
+      return;
+    }
+    if ((f.type||'').toLowerCase()==='application/pdf' || f.name.toLowerCase().endsWith('.pdf')){
+      if (!window.pdfjsLib){
+        previewState.set(item.id,{state:'unavailable',kind:'placeholder',label:'PDF'});
+        return;
+      }
+      fileToArrayBuffer(f).then(async bytes=>{
+        const pdf = await pdfjsLib.getDocument({data:new Uint8Array(bytes)}).promise;
+        const page = await pdf.getPage(1);
+        const viewport = page.getViewport({scale:0.35});
+        const canvas=document.createElement('canvas');
+        canvas.width=Math.max(100,Math.floor(viewport.width));
+        canvas.height=Math.max(130,Math.floor(viewport.height));
+        await page.render({canvasContext:canvas.getContext('2d'),viewport}).promise;
+        previewState.set(item.id,{state:'ready',kind:'image',src:canvas.toDataURL('image/jpeg',0.82)});
+        renderFiles(window.__clicksellCfg);
+        status('Preview ready.','ok');
+      }).catch(()=>{
+        previewState.set(item.id,{state:'unavailable',kind:'placeholder',label:'PDF'});
+        renderFiles(window.__clicksellCfg);
+        status('Preview unavailable, but the file can still be processed.','');
+      });
+      return;
+    }
+    previewState.set(item.id,{state:'unavailable',kind:'placeholder',label:'FILE'});
+  }
   function addFiles(list, cfg){ const arr=Array.from(list||[]); const bad=arr.filter(f=>!validFile(f,cfg)); if(bad.length){ status(`Some files were skipped because they do not match this tool: ${bad.map(f=>f.name).join(', ')}`,'err'); }
     const good=arr.filter(f=>validFile(f,cfg)); if(!cfg.multiple && good.length>1) good.splice(1); if(!cfg.multiple) files=[]; good.forEach(f=>files.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random()),file:f})); originalFiles=[...files]; renderFiles(cfg); if(good.length) status(`${good.length} file${good.length>1?'s':''} added. Review the list, then run the tool.`,'ok'); }
   function validFile(f,cfg){ if(!cfg.accept) return true; const name=f.name.toLowerCase(), type=(f.type||'').toLowerCase(); if(cfg.accept.includes('.pdf')) return name.endsWith('.pdf') || type==='application/pdf'; if(cfg.imageMode==='jpg') return type==='image/jpeg' || name.endsWith('.jpg') || name.endsWith('.jpeg'); if(cfg.imageMode==='png') return type==='image/png' || name.endsWith('.png'); if(cfg.imageMode==='webp') return type==='image/webp' || name.endsWith('.webp'); if(cfg.imageMode==='mixed') return /^image\/(jpeg|png|webp)$/.test(type) || /\.(jpg|jpeg|png|webp)$/.test(name); return true; }
-  function renderFiles(cfg){ const list=$('#file-list'); if(!list) return; list.innerHTML=''; files.forEach((item,idx)=>{ const card=document.createElement('div'); card.className='file-card'; card.draggable=!!cfg.sort || cfg.multiple; card.dataset.id=item.id; card.innerHTML=`<div class="file-order">${idx+1}</div><div><div class="file-name">${escapeHtml(item.file.name)}</div><div class="file-meta">${formatBytes(item.file.size)} · ${escapeHtml(item.file.type || 'file')}</div></div><button class="btn ghost remove-file" type="button">Remove</button>`; list.appendChild(card); }); }
+  function renderFiles(cfg){ const list=$('#file-list'); if(!list) return; list.innerHTML=''; files.forEach((item,idx)=>{ queuePreview(item); const card=document.createElement('div'); const p=previewState.get(item.id)||{kind:'placeholder',label:'FILE'}; const previewHtml=p.kind==='image'&&p.src?`<img class="file-preview-image" src="${p.src}" alt="Preview for ${escapeHtml(item.file.name)}">`:makePlaceholderPreview(p.label||'FILE'); card.className='file-card'; card.draggable=!!cfg.sort || cfg.multiple; card.dataset.id=item.id; card.innerHTML=`<div class="file-order">${idx+1}</div><div class="file-preview">${previewHtml}</div><div><div class="file-name">${escapeHtml(item.file.name)}</div><div class="file-meta">${formatBytes(item.file.size)} · ${escapeHtml(getFileTypeLabel(item.file))}</div><div class="file-meta">${p.state==='ready'?'Preview ready':(p.state==='loading'?'Preview loading…':'Preview unavailable, but file can still be processed')}</div></div><button class="btn ghost remove-file" type="button">Remove</button>`; list.appendChild(card); }); }
   function escapeHtml(s){ return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
   function parseRanges(input, count, required=true){ const txt=(input||'').trim(); if(!txt){ if(required) throw new Error('Please enter page numbers or ranges.'); return Array.from({length:count},(_,i)=>i); } const out=[]; for(const part of txt.split(',')){ const p=part.trim(); if(!p) continue; if(p.includes('-')){ const [a,b]=p.split('-').map(x=>parseInt(x.trim(),10)); if(!a||!b||a>b) throw new Error(`Invalid range: ${p}`); for(let i=a;i<=b;i++) out.push(i-1); } else { const n=parseInt(p,10); if(!n) throw new Error(`Invalid page: ${p}`); out.push(n-1); } }
     for(const i of out){ if(i<0||i>=count) throw new Error(`Page ${i+1} is outside the PDF page count (${count}).`); }
@@ -71,7 +121,7 @@
   function initSignaturePad(){ const canvas=$('#signature-canvas'); if(!canvas) return; const ctx=canvas.getContext('2d'); function resize(){ const rect=canvas.getBoundingClientRect(); const data=ctx.getImageData(0,0,canvas.width||1,canvas.height||1); canvas.width=rect.width*devicePixelRatio; canvas.height=150*devicePixelRatio; ctx.scale(devicePixelRatio,devicePixelRatio); ctx.lineWidth=2; ctx.lineCap='round'; ctx.strokeStyle='#111827'; }
     setTimeout(resize,50); let drawing=false; function pos(e){ const r=canvas.getBoundingClientRect(); const p=e.touches?e.touches[0]:e; return {x:p.clientX-r.left,y:p.clientY-r.top}; } function down(e){ drawing=true; const p=pos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); e.preventDefault(); } function move(e){ if(!drawing) return; const p=pos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); e.preventDefault(); } function up(){ drawing=false; }
     canvas.addEventListener('mousedown',down); canvas.addEventListener('mousemove',move); window.addEventListener('mouseup',up); canvas.addEventListener('touchstart',down,{passive:false}); canvas.addEventListener('touchmove',move,{passive:false}); canvas.addEventListener('touchend',up); $('#clear-signature').onclick=()=>ctx.clearRect(0,0,canvas.width,canvas.height); }
-  function init(){ const app=$('#tool-app'); if(!app) return; const id=app.dataset.tool; const cfg=toolConfigs[id]; if(!cfg){ app.innerHTML='<p class="notice">Tool configuration was not found.</p>'; return; } const needsUpload=cfg.action!=='textToPdf'; app.innerHTML=`${needsUpload?`<div class="upload-zone" id="upload-zone"><strong>Choose files or drag them here</strong><small>Accepted files: ${cfg.accept||'text input'} · Your files are processed in your browser where possible.</small><input id="file-input" type="file" ${cfg.multiple?'multiple':''} accept="${cfg.accept}" hidden></div>`:''}<div class="privacy-note">Privacy note: ClickSellNow tools are designed to process files directly in your browser where possible. No account is required. For support, email <a href="mailto:clicksellnow@proton.me">clicksellnow@proton.me</a>.</div><div class="controls">${controlsHTML(cfg.controls)}</div>${cfg.sort?'<p><button class="btn ghost" id="sort-az" type="button">Sort A-Z</button> <button class="btn ghost" id="sort-za" type="button">Sort Z-A</button> <button class="btn ghost" id="reset-order" type="button">Reset order</button></p>':''}<div class="file-list" id="file-list"></div><p><button class="btn" id="run-tool" type="button">${cfg.button}</button></p><div class="status" id="tool-status">Ready. Add your file${cfg.multiple?'s':''} to begin.</div><div class="result-box" id="result-box" aria-live="polite"></div>`;
+  function init(){ const app=$('#tool-app'); if(!app) return; const id=app.dataset.tool; const cfg=toolConfigs[id]; window.__clicksellCfg=cfg; if(!cfg){ app.innerHTML='<p class="notice">Tool configuration was not found.</p>'; return; } const needsUpload=cfg.action!=='textToPdf'; app.innerHTML=`${needsUpload?`<div class="upload-zone" id="upload-zone"><strong>Choose files or drag them here</strong><small>Accepted files: ${cfg.accept||'text input'} · Your files are processed in your browser where possible.</small><input id="file-input" type="file" ${cfg.multiple?'multiple':''} accept="${cfg.accept}" hidden></div>`:''}<div class="privacy-note">Privacy note: ClickSellNow tools are designed to process files directly in your browser where possible. No account is required. For support, email <a href="mailto:clicksellnow@proton.me">clicksellnow@proton.me</a>.</div><div class="controls">${controlsHTML(cfg.controls)}</div>${cfg.sort?'<p><button class="btn ghost" id="sort-az" type="button">Sort A-Z</button> <button class="btn ghost" id="sort-za" type="button">Sort Z-A</button> <button class="btn ghost" id="reset-order" type="button">Reset order</button></p>':''}<div class="file-list" id="file-list"></div><p><button class="btn" id="run-tool" type="button">${cfg.button}</button></p><div class="status" id="tool-status">Ready. Add your file${cfg.multiple?'s':''} to begin.</div><div class="result-box" id="result-box" aria-live="polite"></div>`;
     if(needsUpload){ const zone=$('#upload-zone'), input=$('#file-input'); zone.onclick=()=>input.click(); input.onchange=()=>addFiles(input.files,cfg); zone.addEventListener('dragover',e=>{e.preventDefault();zone.classList.add('dragover');}); zone.addEventListener('dragleave',()=>zone.classList.remove('dragover')); zone.addEventListener('drop',e=>{e.preventDefault();zone.classList.remove('dragover');addFiles(e.dataTransfer.files,cfg);}); $('#file-list').addEventListener('click',e=>{ const btn=e.target.closest('.remove-file'); if(!btn) return; const id=btn.closest('.file-card').dataset.id; files=files.filter(x=>x.id!==id); renderFiles(cfg); status('File removed.','ok'); }); let dragId=null; $('#file-list').addEventListener('dragstart',e=>{ const c=e.target.closest('.file-card'); if(c) dragId=c.dataset.id; }); $('#file-list').addEventListener('dragover',e=>e.preventDefault()); $('#file-list').addEventListener('drop',e=>{ e.preventDefault(); const c=e.target.closest('.file-card'); if(!c||!dragId) return; const from=files.findIndex(x=>x.id===dragId), to=files.findIndex(x=>x.id===c.dataset.id); const [m]=files.splice(from,1); files.splice(to,0,m); renderFiles(cfg); status('Order updated.','ok'); }); }
     if(cfg.sort){ $('#sort-az').onclick=()=>{files.sort((a,b)=>a.file.name.localeCompare(b.file.name));renderFiles(cfg);}; $('#sort-za').onclick=()=>{files.sort((a,b)=>b.file.name.localeCompare(a.file.name));renderFiles(cfg);}; $('#reset-order').onclick=()=>{files=[...originalFiles];renderFiles(cfg);}; }
     initSignaturePad(); $('#run-tool').onclick=async()=>{ try{ if(needsUpload && (!files.length || (cfg.need&&files.length<cfg.need))) throw new Error(cfg.need?`Please add at least ${cfg.need} files.`:'Please add a file first.'); $('#run-tool').disabled=true; status('Working in your browser. Please wait...'); let msg=''; switch(cfg.action){ case 'merge': msg=await merge(); break; case 'split': msg=await split(); break; case 'compress': msg=await compress(); break; case 'rotate': msg=await rotate(); break; case 'reorder': msg=await reorder(); break; case 'deletePages': msg=await deletePages(); break; case 'extractPages': msg=await extractPages(); break; case 'pageNumbers': msg=await pageNumbers(); break; case 'watermark': msg=await watermark(); break; case 'sign': msg=await sign(); break; case 'imagesToPdf': msg=await imagesToPdf(); break; case 'pdfToImages': msg=await pdfToImages(cfg.format); break; case 'pdfToText': msg=await pdfToText(); break; case 'textToPdf': msg=await textToPdf(); break; case 'pageCounter': msg=await pageCounter(); break; case 'fileInfo': msg=await fileInfo(); break; default: throw new Error('Unknown tool action.'); } status(msg,'ok'); }catch(err){ console.error(err); status(err.message||'Something went wrong while processing your file.','err'); } finally{ $('#run-tool').disabled=false; } };
