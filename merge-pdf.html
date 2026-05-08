@@ -1,1 +1,113 @@
-<!doctype html><html><head><meta charset='utf-8'><title>Merge PDF - ClickSellNow</title><link rel='stylesheet' href='styles.css'><script src='https://unpkg.com/pdf-lib/dist/pdf-lib.min.js'></script></head><body><header><div class='nav'><a class='logo' href='index.html'>ClickSellNow</a><nav><a href='index.html'>Tools</a><a href='guides.html'>Guides</a></nav></div></header><main class='container'><h1>Merge PDF</h1><div class='card'><div id='drop' class='drop'>Drag and drop PDF files<input id='file' type='file' accept='application/pdf' multiple></div><div id='list'></div><button class='btn' id='run'>Merge PDFs</button> <button class='btn secondary' id='clear'>Clear</button><div id='status' class='status' style='display:none'></div><div id='downloadWrap' style='display:none;margin-top:12px'><a id='downloadLink' class='btn'>Download merged PDF</a></div><p class='small'>Privacy: files are processed in your browser and not uploaded to our servers.</p></div><div class='card'><h3>FAQ</h3><p><b>Is this free?</b> Yes.</p><p><b>File limit?</b> Depends on your device memory.</p><h3>Related tools</h3><a href='split-pdf.html'>Split PDF</a> · <a href='rotate-pdf.html'>Rotate PDF</a></div></main><script src='app.js'></script><script>const f=CSN.el('file'),d=CSN.el('drop'),l=CSN.el('list');let files=[];function render(){l.innerHTML=files.map((x,i)=>`<div class='file-item'>${x.name}<button onclick='removeFile(${i})'>Remove</button></div>`).join('')}window.removeFile=i=>{files.splice(i,1);render()};function add(fs){files=[...files,...[...fs].filter(x=>x.type==='application/pdf')];render();CSN.setStatus(files.length?`${files.length} file(s) ready.`:'No PDF files selected.','info')}f.onchange=e=>add(e.target.files);['dragover','dragleave','drop'].forEach(ev=>d.addEventListener(ev,e=>{e.preventDefault();if(ev==='dragover')d.classList.add('drag');if(ev==='dragleave'||ev==='drop')d.classList.remove('drag');if(ev==='drop')add(e.dataTransfer.files)}));CSN.el('clear').onclick=()=>{files=[];render();CSN.clearStatus();CSN.el('downloadWrap').style.display='none'};CSN.el('run').onclick=async()=>{try{if(files.length<2)throw new Error('Please add at least 2 PDF files.');CSN.setStatus('Merging files...','info');const out=await PDFLib.PDFDocument.create();for(const file of files){const b=await file.arrayBuffer();const src=await PDFLib.PDFDocument.load(b);const pages=await out.copyPages(src,src.getPageIndices());pages.forEach(p=>out.addPage(p));}const bytes=await out.save();CSN.setDownload('merged.pdf',new Blob([bytes],{type:'application/pdf'}));CSN.setStatus('Merge complete.','success')}catch(e){CSN.setStatus(e.message,'error')}};</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merge PDF Online for Free - ClickSellNow</title>
+  <meta name="description" content="Combine two or more PDF files into one clean document directly in your browser.">
+  <link rel="canonical" href="https://clicksellnow.com/merge-pdf.html">
+  <meta property="og:title" content="Merge PDF Online for Free - ClickSellNow">
+  <meta property="og:description" content="Combine two or more PDF files into one clean document directly in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://clicksellnow.com/merge-pdf.html">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952834143682557" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="ClickSellNow home">
+      <span class="brand-mark">CS</span><span>ClickSellNow</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation"><a class="" href="/index.html">Home</a><a class="" href="/all-tools.html">All Tools</a><a class="" href="/guides.html">Guides</a><a class="" href="/about.html">About</a><a class="" href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+  <section class="content">
+    <div class="breadcrumbs"><a href="/">Home</a> / <a href="/all-tools.html">All Tools</a> / Merge PDF</div>
+    <h1>Merge PDF Online for Free</h1>
+    <p class="lead">Use the free Merge PDF tool to combine invoices, reports, notes, forms, scanned pages, and business documents into a single PDF. You can add several files, review the order, remove mistakes, and download one merged PDF without creating an account.</p>
+  </section>
+  <section class="tool-shell">
+    <div class="tool-panel">
+      <div id="tool-app" data-tool="merge-pdf"></div>
+    </div>
+  </section>
+  <section class="content">
+    <h2>How to use Merge PDF</h2>
+    <ol>
+      <li>Open the tool and add the required file or files.</li>
+      <li>Review the file list, page range, order, or settings shown in the tool area.</li>
+      <li>Click the main action button and wait while your browser processes the file.</li>
+      <li>Download the result and review it before sending or uploading it anywhere important.</li>
+    </ol>
+    <h2>When this tool is useful</h2>
+    <ul><li>Combine multiple invoices into one file for accounting.</li><li>Merge scanned forms into a single document.</li><li>Join class notes, reports, or project files before sending.</li><li>Prepare a cleaner document package for email or online submission.</li></ul>
+    <h2>File privacy and safety</h2>
+    <p>ClickSellNow PDF tools are designed for browser-based processing where possible. This means common tasks can be handled locally by your browser without requiring an account. Large files can still be limited by your device memory, so use a desktop browser for heavy documents. For feedback or support, contact <a href="mailto:clicksellnow@proton.me">clicksellnow@proton.me</a>.</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq"><details><summary>Can I merge PDF files for free?</summary><p>Yes. This tool is free to use and does not require an account.</p></details><details><summary>Can I change the order before merging?</summary><p>Yes. You can drag files into a new order or use the sort buttons before creating the final PDF.</p></details><details><summary>Are my PDF files uploaded?</summary><p>The tool is designed for browser-based processing where possible. Your files are handled locally in your browser instead of requiring a sign-up.</p></details><details><summary>Why does a very large PDF fail?</summary><p>Large files can exceed browser memory, especially on mobile devices. Try fewer files or a desktop browser.</p></details><details><summary>Can I remove a file before merging?</summary><p>Yes. Each file card includes a remove button so you can delete files from the merge list.</p></details><details><summary>Will links and forms always remain editable?</summary><p>Most regular PDF pages are copied into the new file, but advanced form fields or unusual embedded features may vary by file.</p></details></div>
+    <h2>Related PDF tools</h2>
+    <div class="tool-grid">
+<a class="tool-card" href="/split-pdf.html">
+  <span class="category-pill">Popular PDF Tools</span>
+  <h3>Split PDF</h3>
+  <p>Split a PDF into selected pages or export individual pages as separate files.</p>
+  <span class="open-link">Open tool →</span>
+</a>
+<a class="tool-card" href="/compress-pdf.html">
+  <span class="category-pill">Popular PDF Tools</span>
+  <h3>Compress PDF</h3>
+  <p>Create a smaller optimized PDF when possible by rebuilding the document in your browser.</p>
+  <span class="open-link">Open tool →</span>
+</a>
+<a class="tool-card" href="/rotate-pdf.html">
+  <span class="category-pill">Popular PDF Tools</span>
+  <h3>Rotate PDF</h3>
+  <p>Rotate all pages or selected pages in a PDF by 90, 180, or 270 degrees.</p>
+  <span class="open-link">Open tool →</span>
+</a>
+<a class="tool-card" href="/reorder-pdf-pages.html">
+  <span class="category-pill">PDF Editing Tools</span>
+  <h3>Reorder PDF Pages</h3>
+  <p>Create a new PDF with pages arranged in the exact order you choose.</p>
+  <span class="open-link">Open tool →</span>
+</a></div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a class="footer-logo" href="/">ClickSellNow</a>
+      <p>Free online PDF tools for everyday documents. Merge, split, convert, rotate, organize, and manage PDF files with simple browser-based tools where possible.</p>
+      <p class="support-line">Support: <a href="mailto:clicksellnow@proton.me">clicksellnow@proton.me</a></p>
+    </div>
+    <div>
+      <h3>PDF Tools</h3>
+      <ul><li><a href="/merge-pdf.html">Merge PDF</a></li><li><a href="/split-pdf.html">Split PDF</a></li><li><a href="/compress-pdf.html">Compress PDF</a></li><li><a href="/jpg-to-pdf.html">JPG to PDF</a></li><li><a href="/pdf-to-jpg.html">PDF to JPG</a></li><li><a href="/rotate-pdf.html">Rotate PDF</a></li></ul>
+    </div>
+    <div>
+      <h3>PDF Guides</h3>
+      <ul><li><a href="/guides/how-to-merge-pdf-files-online.html">How to Merge PDF Files Online for Free</a></li><li><a href="/guides/how-to-split-pdf-files.html">How to Split a PDF into Separate Pages</a></li><li><a href="/guides/how-to-compress-pdf.html">How to Compress a PDF Without Losing Too Much Quality</a></li><li><a href="/guides/how-to-rotate-pdf-pages.html">How to Rotate PDF Pages Online</a></li><li><a href="/guides/how-to-delete-pdf-pages.html">How to Delete Pages from a PDF File</a></li></ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Use</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 ClickSellNow PDF Tools. All rights reserved.</div>
+</footer>
+<script src="/assets/site.js"></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="/assets/pdf-tools.js"></script>
+</body>
+</html>

@@ -1,1 +1,113 @@
-<!doctype html><html><head><meta charset='utf-8'><title>Split PDF - ClickSellNow</title><link rel='stylesheet' href='styles.css'><script src='https://unpkg.com/pdf-lib/dist/pdf-lib.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs' type='module'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'></script></head><body><header><div class='nav'><a class='logo' href='index.html'>ClickSellNow</a><nav><a href='index.html'>Tools</a><a href='guides.html'>Guides</a></nav></div></header><main class='container'><h1>Split PDF</h1><div class='card'><div id='drop' class='drop'>Drag and drop files<input id='file' type='file' multiple></div><div id='extra'></div><div id='list'></div><button class='btn' id='run'>Split PDF</button> <button class='btn secondary' id='clear'>Clear</button><div id='status' class='status' style='display:none'></div><div id='downloadWrap' style='display:none;margin-top:12px'><a id='downloadLink' class='btn'>Download result</a></div><p class='small'>Privacy: files are processed in your browser and not uploaded to our servers.</p></div><div class='card'><h3>FAQ</h3><p><b>What does this tool do?</b> It helps you split pages.</p><h3>Related tools</h3><a href='merge-pdf.html'>Merge PDF</a> · <a href='split-pdf.html'>Split PDF</a> · <a href='jpg-to-pdf.html'>JPG to PDF</a> · <a href='pdf-to-jpg.html'>PDF to JPG</a></div></main><script src='app.js'></script><script src='tool-split-pdf.js'></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Split PDF Online - ClickSellNow</title>
+  <meta name="description" content="Split a PDF into selected pages or export individual pages as separate files.">
+  <link rel="canonical" href="https://clicksellnow.com/split-pdf.html">
+  <meta property="og:title" content="Split PDF Online - ClickSellNow">
+  <meta property="og:description" content="Split a PDF into selected pages or export individual pages as separate files.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://clicksellnow.com/split-pdf.html">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952834143682557" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="ClickSellNow home">
+      <span class="brand-mark">CS</span><span>ClickSellNow</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation"><a class="" href="/index.html">Home</a><a class="" href="/all-tools.html">All Tools</a><a class="" href="/guides.html">Guides</a><a class="" href="/about.html">About</a><a class="" href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+  <section class="content">
+    <div class="breadcrumbs"><a href="/">Home</a> / <a href="/all-tools.html">All Tools</a> / Split PDF</div>
+    <h1>Split PDF Online</h1>
+    <p class="lead">Use the Split PDF tool when you only need certain pages from a larger file. Enter page ranges such as 1-3, 5, or 8-10, then download a new PDF containing the selected pages or export individual pages as a ZIP file.</p>
+  </section>
+  <section class="tool-shell">
+    <div class="tool-panel">
+      <div id="tool-app" data-tool="split-pdf"></div>
+    </div>
+  </section>
+  <section class="content">
+    <h2>How to use Split PDF</h2>
+    <ol>
+      <li>Open the tool and add the required file or files.</li>
+      <li>Review the file list, page range, order, or settings shown in the tool area.</li>
+      <li>Click the main action button and wait while your browser processes the file.</li>
+      <li>Download the result and review it before sending or uploading it anywhere important.</li>
+    </ol>
+    <h2>When this tool is useful</h2>
+    <ul><li>Separate one chapter from a large PDF.</li><li>Create a smaller file for email attachment.</li><li>Save only the pages needed for an application.</li><li>Export individual scanned pages for separate records.</li></ul>
+    <h2>File privacy and safety</h2>
+    <p>ClickSellNow PDF tools are designed for browser-based processing where possible. This means common tasks can be handled locally by your browser without requiring an account. Large files can still be limited by your device memory, so use a desktop browser for heavy documents. For feedback or support, contact <a href="mailto:clicksellnow@proton.me">clicksellnow@proton.me</a>.</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq"><details><summary>How do I choose pages to split?</summary><p>Enter page numbers or ranges such as 1-3,5. The tool will create output from those pages.</p></details><details><summary>Can I split into individual pages?</summary><p>Yes. Use the individual pages option to download a ZIP containing separate PDF pages.</p></details><details><summary>Does the file leave my computer?</summary><p>The tool is designed to process the file in your browser where possible.</p></details><details><summary>Can I split scanned PDF files?</summary><p>Yes, scanned pages can usually be copied as pages, although OCR text is not added.</p></details><details><summary>What happens if I enter an invalid page number?</summary><p>The tool checks the page count and shows an error if the range is outside the PDF.</p></details><details><summary>Can I use this on mobile?</summary><p>Yes, but large files are more reliable on desktop browsers.</p></details></div>
+    <h2>Related PDF tools</h2>
+    <div class="tool-grid">
+<a class="tool-card" href="/merge-pdf.html">
+  <span class="category-pill">Popular PDF Tools</span>
+  <h3>Merge PDF</h3>
+  <p>Combine two or more PDF files into one clean document directly in your browser.</p>
+  <span class="open-link">Open tool →</span>
+</a>
+<a class="tool-card" href="/compress-pdf.html">
+  <span class="category-pill">Popular PDF Tools</span>
+  <h3>Compress PDF</h3>
+  <p>Create a smaller optimized PDF when possible by rebuilding the document in your browser.</p>
+  <span class="open-link">Open tool →</span>
+</a>
+<a class="tool-card" href="/rotate-pdf.html">
+  <span class="category-pill">Popular PDF Tools</span>
+  <h3>Rotate PDF</h3>
+  <p>Rotate all pages or selected pages in a PDF by 90, 180, or 270 degrees.</p>
+  <span class="open-link">Open tool →</span>
+</a>
+<a class="tool-card" href="/reorder-pdf-pages.html">
+  <span class="category-pill">PDF Editing Tools</span>
+  <h3>Reorder PDF Pages</h3>
+  <p>Create a new PDF with pages arranged in the exact order you choose.</p>
+  <span class="open-link">Open tool →</span>
+</a></div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a class="footer-logo" href="/">ClickSellNow</a>
+      <p>Free online PDF tools for everyday documents. Merge, split, convert, rotate, organize, and manage PDF files with simple browser-based tools where possible.</p>
+      <p class="support-line">Support: <a href="mailto:clicksellnow@proton.me">clicksellnow@proton.me</a></p>
+    </div>
+    <div>
+      <h3>PDF Tools</h3>
+      <ul><li><a href="/merge-pdf.html">Merge PDF</a></li><li><a href="/split-pdf.html">Split PDF</a></li><li><a href="/compress-pdf.html">Compress PDF</a></li><li><a href="/jpg-to-pdf.html">JPG to PDF</a></li><li><a href="/pdf-to-jpg.html">PDF to JPG</a></li><li><a href="/rotate-pdf.html">Rotate PDF</a></li></ul>
+    </div>
+    <div>
+      <h3>PDF Guides</h3>
+      <ul><li><a href="/guides/how-to-merge-pdf-files-online.html">How to Merge PDF Files Online for Free</a></li><li><a href="/guides/how-to-split-pdf-files.html">How to Split a PDF into Separate Pages</a></li><li><a href="/guides/how-to-compress-pdf.html">How to Compress a PDF Without Losing Too Much Quality</a></li><li><a href="/guides/how-to-rotate-pdf-pages.html">How to Rotate PDF Pages Online</a></li><li><a href="/guides/how-to-delete-pdf-pages.html">How to Delete Pages from a PDF File</a></li></ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Use</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 ClickSellNow PDF Tools. All rights reserved.</div>
+</footer>
+<script src="/assets/site.js"></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="/assets/pdf-tools.js"></script>
+</body>
+</html>
