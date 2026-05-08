@@ -26,3 +26,20 @@ span,
   overflow-wrap: normal;
   white-space: normal;
 }
+
+
+.no-split,
+.pdf-word,
+.site-footer .pdf-word {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  hyphens: none !important;
+}
+
+.site-footer a {
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}

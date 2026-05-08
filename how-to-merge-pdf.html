@@ -254,7 +254,24 @@
         width: 100%;
       }
     }
-  </style>
+
+.no-split,
+.pdf-word,
+.site-footer .pdf-word {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  hyphens: none !important;
+}
+
+.site-footer a {
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+</style>
 
   <script type="application/ld+json">
   {
@@ -528,7 +545,7 @@
   </main>
 
   <footer>
-    <p>© 2026 ClickSellNow. Free online PDF tools for everyday document tasks.</p>
+    <p>© 2026 ClickSellNow. Free online <span class="pdf-word">PDF</span> tools for everyday document tasks.</p>
   </footer>
 </body>
 </html>
