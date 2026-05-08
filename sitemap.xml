@@ -1,116 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://www.clicksellnow.com/</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/jpg-to-pdf.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/pdf-to-jpg.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/merge-pdf.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/split-pdf.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/rotate-pdf.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/how-to-convert-jpg-to-pdf.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/how-to-merge-pdf.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/blog.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/post.html?slug=split-pdf-online</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/post.html?slug=merge-pdf-online</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/post.html?slug=compress-pdf-online</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/about.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/contact.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/privacy-policy.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.clicksellnow.com/terms.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
+<url><loc>https://www.clicksellnow.com/index.html</loc></url>
+<url><loc>https://www.clicksellnow.com/guides.html</loc></url>
+<url><loc>https://www.clicksellnow.com/about.html</loc></url>
+<url><loc>https://www.clicksellnow.com/contact.html</loc></url>
+<url><loc>https://www.clicksellnow.com/privacy-policy.html</loc></url>
+<url><loc>https://www.clicksellnow.com/terms.html</loc></url>
+<url><loc>https://www.clicksellnow.com/merge-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/split-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/jpg-to-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/pdf-to-jpg.html</loc></url>
+<url><loc>https://www.clicksellnow.com/rotate-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/compress-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/pdf-to-word.html</loc></url>
+<url><loc>https://www.clicksellnow.com/word-to-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/excel-to-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/ppt-to-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/pdf-to-ppt.html</loc></url>
+<url><loc>https://www.clicksellnow.com/pdf-to-excel.html</loc></url>
+<url><loc>https://www.clicksellnow.com/unlock-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/protect-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/watermark-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/organize-pdf.html</loc></url>
+<url><loc>https://www.clicksellnow.com/delete-pdf-pages.html</loc></url>
+<url><loc>https://www.clicksellnow.com/extract-pdf-pages.html</loc></url>
+<url><loc>https://www.clicksellnow.com/pdf-page-numbers.html</loc></url>
+<url><loc>https://www.clicksellnow.com/sign-pdf.html</loc></url>
 </urlset>
