@@ -1,0 +1,8 @@
+Route verification report
+index.html: title="Free Online PDF Tools - Merge, Split, Convert and Edit PDF Files" | h1="Free Online PDF Tools for Everyday Documents"
+all-tools.html: title="All PDF Tools - ClickSellNow" | h1="All PDF Tools"
+guides.html: title="PDF Guides - ClickSellNow" | h1="PDF Guides"
+about.html: title="About ClickSellNow PDF Tools" | h1="About ClickSellNow PDF Tools"
+contact.html: title="Contact ClickSellNow" | h1="Contact ClickSellNow"
+privacy-policy.html: title="Privacy Policy - ClickSellNow" | h1="Privacy Policy"
+terms.html: title="Terms of Use - ClickSellNow" | h1="Terms of Use"

@@ -1,0 +1,19 @@
+ClickSellNow PDF Tools v2.2 verified routes
+
+Replace the whole old site with this package. Do not mix files from older versions.
+After deployment, check these URLs:
+
+/                    -> Free Online PDF Tools for Everyday Documents
+/index.html           -> Free Online PDF Tools for Everyday Documents
+/all-tools.html       -> All PDF Tools
+/guides.html          -> PDF Guides
+/about.html           -> About ClickSellNow PDF Tools
+/contact.html         -> Contact ClickSellNow
+/privacy-policy.html  -> Privacy Policy
+/terms.html           -> Terms of Use
+
+Important:
+- If a URL still shows the wrong page, clear browser cache or open in incognito.
+- In Vercel, redeploy after deleting/replacing old files.
+- Make sure no older generated files are mixed into the project.
+Support email used across pages: clicksellnow@proton.me
