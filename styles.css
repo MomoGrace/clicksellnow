@@ -10,14 +10,14 @@
 .content h2,
 .content h3 {
   text-align: left;
-  text-justify: auto;
-  letter-spacing: normal !important;
+    letter-spacing: normal !important;
   word-spacing: normal !important;
   word-break: normal;
   overflow-wrap: normal;
   white-space: normal;
   hyphens: none;
   font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
   font-kerning: normal;
 }
 
